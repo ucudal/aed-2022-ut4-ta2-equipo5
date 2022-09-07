@@ -20,13 +20,10 @@ public class TArbolBB<T> implements IArbolBB<T> {
         if (this.raiz != null)
         {
             res = this.raiz.insertar(unElemento);
-            //if (res)
-                //this.contador = raiz.contador;
         }
         else
         {
             this.raiz = unElemento;
-            //this.contador = 1;
             return true;
         }
 
@@ -35,17 +32,11 @@ public class TArbolBB<T> implements IArbolBB<T> {
 
     @Override
     public TElementoAB<T> buscar(Comparable unaEtiqueta) {
-        if (esVacio()){
+        if(esVacio()) {
             return null;
-        }else{
+        } else {
             return raiz.buscar(unaEtiqueta);
         }
-
-    }
-
-    @Override
-    public TElementoAB<T> buscar(Comparable unaEtiqueta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
@@ -55,29 +46,7 @@ public class TArbolBB<T> implements IArbolBB<T> {
 
     @Override
     public String inOrden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String postOrden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void eliminar(Comparable unaEtiqueta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-       }
-
-    @Override
-    public String preOrden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public String inOrden() {
-          if (esVacio()){
+        if (esVacio()){
             return null;
         }else{
             return raiz.inOrden();
@@ -100,6 +69,6 @@ public class TArbolBB<T> implements IArbolBB<T> {
 
     public boolean esVacio(){
         return (raiz == null);
- }
+    }
 
 }

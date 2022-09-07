@@ -83,12 +83,12 @@ public class ManejadorArchivosGenerico {
 		    ArrayList<String> words = new ArrayList<String>();
 		    while(st.hasMoreTokens()){
 			    String temp = st.nextToken();
-			    String word = temp.replaceAll("�", "a");
-			    word = word.replaceAll("�", "e");
-			    word = word.replaceAll("�", "i");
-			    word = word.replaceAll("�", "o");
-			    word = word.replaceAll("�", "u");
-			    word = word.replaceAll("�", "n");
+			    String word = temp.replaceAll("á", "a");
+			    word = word.replaceAll("é", "e");
+			    word = word.replaceAll("í", "i");
+			    word = word.replaceAll("ó", "o");
+			    word = word.replaceAll("ú", "u");
+			    word = word.replaceAll("ñ", "n");
 			    word = word.replaceAll("\\W+", "");
 			    if (word.compareTo("") != 0){
 			    	words.add(word);
