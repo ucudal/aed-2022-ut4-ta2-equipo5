@@ -50,19 +50,20 @@ public class TElementoAB<T> implements IElementoAB<T> {
     @Override
     public boolean insertar(TElementoAB<T> unElemento)
     {
-        this.contador= 0;
+        TArbolBB.contador++;
+        //this.contador = 0;
+        //this.contador++;
         if (unElemento.getEtiqueta().compareTo(etiqueta) < 0) {
             if (hijoIzq != null) {
                 
                 boolean res = getHijoIzq().insertar(unElemento);
                 if (res){
-                    this.contador += getHijoIzq().contador;
+                    //this.contador += getHijoIzq().contador;
                 }
                 return res;
 
             } else {
                 hijoIzq = unElemento;
-                contador++;
                 return true;
             }
         } else if (unElemento.getEtiqueta().compareTo(etiqueta) > 0) {
@@ -70,12 +71,11 @@ public class TElementoAB<T> implements IElementoAB<T> {
 
                 boolean res = getHijoDer().insertar(unElemento);
                 if (res){
-                    this.contador += getHijoDer().contador;
+                    //this.contador += getHijoDer().contador;
                 }
                 return res;
             } else {
                 hijoDer = unElemento;
-                contador++;
                 return true;
             }
         } else {

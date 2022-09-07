@@ -16,17 +16,17 @@ public class TArbolBB<T> implements IArbolBB<T> {
     @Override
     public boolean insertar(TElementoAB<T> unElemento) {
         boolean res = false;
-        this.contador = 0;
+        TArbolBB.contador = 0;
         if (this.raiz != null)
         {
             res = this.raiz.insertar(unElemento);
-            if (res)
-                this.contador = raiz.contador;
+            //if (res)
+                //this.contador = raiz.contador;
         }
         else
         {
             this.raiz = unElemento;
-            this.contador = 1;
+            //this.contador = 1;
             return true;
         }
         
