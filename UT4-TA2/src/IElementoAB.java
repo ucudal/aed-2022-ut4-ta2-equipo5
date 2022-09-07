@@ -5,35 +5,35 @@ public interface IElementoAB<T> {
      *
      * @return Etiqueta del nodo.
      */
-    public Comparable getEtiqueta();
+    Comparable getEtiqueta();
 
     /**
      * Obtiene el hijo izquierdo del nodo.
      *
      * @return Hijo Izquierdo del nodo.
      */
-    public TElementoAB<T> getHijoIzq();
+    TElementoAB<T> getHijoIzq();
 
     /**
      * Obtiene el hijo derecho del nodo.
      *
      * @return Hijo derecho del nodo.
      */
-    public TElementoAB<T> getHijoDer();
+    TElementoAB<T> getHijoDer();
 
     /**
      * Asigna el hijo izquierdo del nodo.
      *
      * @return Elemento a ser asignado como hijo izquierdo.
      */
-    public void setHijoIzq(TElementoAB<T> elemento);
+    void setHijoIzq(TElementoAB<T> elemento);
 
     /**
      * Asigna el hijo derecho del nodo.
      *
      * @return Elemento a ser asignado como hijo derecho.
      */
-    public void setHijoDer(TElementoAB<T> elemento);
+    void setHijoDer(TElementoAB<T> elemento);
 
     /**
      * Busca un elemento dentro del arbol con la etiqueta indicada.
@@ -41,7 +41,7 @@ public interface IElementoAB<T> {
      * @param unaEtiqueta del nodo a buscar
      * @return Elemento encontrado. En caso de no encontrarlo, retorna nulo.
      */
-    public TElementoAB<T> buscar(Comparable unaEtiqueta);
+    TElementoAB<T> buscar(Comparable unaEtiqueta);
 
  
 
@@ -51,41 +51,41 @@ public interface IElementoAB<T> {
      * @param elemento Elemento a insertar.
      * @return Exito de la operaci�n.
      */
-    public boolean insertar(TElementoAB<T> elemento);
+    boolean insertar(TElementoAB<T> elemento);
 
     /**
      * Imprime en preorden el arbol separado por guiones.
      *
      * @return String conteniendo el PreOrden
      */
-    public String preOrden();
+    String preOrden();
 
     /**
      * Imprime en inorden el arbol separado por guiones.
      *
      * @return String conteniendo el InOrden
      */
-    public String inOrden();
+    String inOrden();
 
     /**
      * Imprime en postorden el arbol separado por guiones.
      *
      * @return String conteniendo el PostOrden
      */
-    public String postOrden();
+    String postOrden();
 
     /**
      * Retorna los datos contenidos en el elemento.
      *
      * @return
      */
-    public T getDatos();
+    T getDatos();
 	
 	 /**
      * Elimina un elemento dada una etiqueta.
      * @param unaEtiqueta
      * @return 
      */
-    public TElementoAB eliminar(Comparable unaEtiqueta);
+     TElementoAB eliminar(Comparable unaEtiqueta);
 
 }

@@ -1,18 +1,13 @@
 public class TElementoAB<T> implements IElementoAB<T> {
 
-    private Comparable etiqueta;
-    private TElementoAB hijoIzq;
-    private TElementoAB hijoDer;
-    private T datos;
+    private final Comparable etiqueta;
+    private final T datos;
+    private TElementoAB<T> hijoIzq;
+    private TElementoAB<T> hijoDer;
 
-    /**
-     * @param unaEtiqueta
-     * @param unosDatos
-     * @return 
-     */
     public TElementoAB(Comparable unaEtiqueta, T unosDatos) {
-        etiqueta = unaEtiqueta;
-        datos = unosDatos;
+        this.etiqueta = unaEtiqueta;
+        this.datos = unosDatos;
     }
 
     @Override
@@ -42,39 +37,39 @@ public class TElementoAB<T> implements IElementoAB<T> {
 
     @Override
     public TElementoAB<T> buscar(Comparable unaEtiqueta) {
-        if (unaEtiqueta.equals(etiqueta)){
+        if (unaEtiqueta.compareTo(this.etiqueta) == 0){
             return this;
-        }else if (unaEtiqueta.compareTo(etiqueta)<0){
-            if (hijoIzq != null){
+
+        }else if (unaEtiqueta.compareTo(this.etiqueta)<0){
+            if (this.hijoIzq != null) {
                 return getHijoIzq().buscar(unaEtiqueta);
-            }else{
-                return null;
             }
-        }else if (hijoDer != null){
-            return getHijoDer().buscar(unaEtiqueta);
-        } else {
             return null;
+
+        }else if (this.hijoDer != null) {
+            return getHijoDer().buscar(unaEtiqueta);
         }
 
+        return null;
     }
 
     @Override
     public boolean insertar(TElementoAB<T> unElemento)
     {
         TArbolBB.contador++;
-        if (unElemento.getEtiqueta().compareTo(etiqueta) < 0) {
-            if (hijoIzq != null) {
+        if (unElemento.getEtiqueta().compareTo(this.etiqueta) < 0) {
+            if (this.hijoIzq != null) {
                 return getHijoIzq().insertar(unElemento);
 
             } else {
-                hijoIzq = unElemento;
+                this.hijoIzq = unElemento;
                 return true;
             }
-        } else if (unElemento.getEtiqueta().compareTo(etiqueta) > 0) {
-            if (hijoDer != null) {
+        } else if (unElemento.getEtiqueta().compareTo(this.etiqueta) > 0) {
+            if (this.hijoDer != null) {
                 return getHijoDer().insertar(unElemento);
             } else {
-                hijoDer = unElemento;
+                this.hijoDer = unElemento;
                 return true;
             }
         } else {
@@ -91,29 +86,30 @@ public class TElementoAB<T> implements IElementoAB<T> {
     @Override
     public String inOrden() {
         StringBuilder tempStr = new StringBuilder();
-        if (hijoIzq != null){
+        if (this.hijoIzq != null){
             tempStr.append(getHijoIzq().inOrden());
             tempStr.append(TArbolBB.SEPARADOR_ELEMENTOS_IMPRESOS);
         }
-        tempStr.append(etiqueta.toString());
-        if (hijoDer != null){
+        tempStr.append(this.etiqueta.toString());
+        if (this.hijoDer != null){
             tempStr.append(TArbolBB.SEPARADOR_ELEMENTOS_IMPRESOS);
             tempStr.append(getHijoDer().inOrden());
         }
-        return tempStr.toString();    }
+        return tempStr.toString();
+    }
 
     @Override
     public String postOrden() {
         StringBuilder tempStr = new StringBuilder();
-        if (hijoIzq != null) {
+        if (this.hijoIzq != null) {
             tempStr.append(getHijoIzq().postOrden());
             tempStr.append(TArbolBB.SEPARADOR_ELEMENTOS_IMPRESOS);
         }
-        if (hijoDer != null) {
+        if (this.hijoDer != null) {
             tempStr.append(getHijoDer().postOrden());
             tempStr.append(TArbolBB.SEPARADOR_ELEMENTOS_IMPRESOS);
         }
-        tempStr.append(etiqueta.toString());
+        tempStr.append(this.etiqueta.toString());
         return tempStr.toString();    }
 
     @Override

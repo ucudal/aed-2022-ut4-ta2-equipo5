@@ -10,24 +10,18 @@ public class TArbolBB<T> implements IArbolBB<T> {
     public static final String SEPARADOR_ELEMENTOS_IMPRESOS = "-";
 
     public TArbolBB() {
-        raiz = null;
+        this.raiz = null;
     }
 
     @Override
     public boolean insertar(TElementoAB<T> unElemento) {
-        boolean res = false;
         TArbolBB.contador = 0;
-        if (this.raiz != null)
-        {
-            res = this.raiz.insertar(unElemento);
-        }
-        else
-        {
+        if (this.raiz == null) {
             this.raiz = unElemento;
             return true;
         }
 
-        return res;
+        return this.raiz.insertar(unElemento);
     }
 
     @Override
@@ -35,7 +29,7 @@ public class TArbolBB<T> implements IArbolBB<T> {
         if(esVacio()) {
             return null;
         } else {
-            return raiz.buscar(unaEtiqueta);
+            return this.raiz.buscar(unaEtiqueta);
         }
     }
 
@@ -49,7 +43,7 @@ public class TArbolBB<T> implements IArbolBB<T> {
         if (esVacio()){
             return null;
         }else{
-            return raiz.inOrden();
+            return this.raiz.inOrden();
         }
     }
 
@@ -58,7 +52,7 @@ public class TArbolBB<T> implements IArbolBB<T> {
         if (esVacio()){
             return null;
         }else{
-            return raiz.postOrden();
+            return this.raiz.postOrden();
         }
     }
 
@@ -68,7 +62,7 @@ public class TArbolBB<T> implements IArbolBB<T> {
     }
 
     public boolean esVacio(){
-        return (raiz == null);
+        return (this.raiz == null);
     }
 
 }

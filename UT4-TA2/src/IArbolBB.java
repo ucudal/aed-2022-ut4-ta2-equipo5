@@ -8,7 +8,7 @@ public interface IArbolBB<T> {
      * @return Exito de la operacián
      */
 
-    public boolean insertar(TElementoAB<T> unElemento);
+    boolean insertar(TElementoAB<T> unElemento);
 
  
 
@@ -20,35 +20,35 @@ public interface IArbolBB<T> {
      * .
      * @return Elemento encontrado. En caso de no encontrarlo, retorna nulo.
      */
-    public TElementoAB<T> buscar(Comparable unaEtiqueta);
+    TElementoAB<T> buscar(Comparable unaEtiqueta);
 
     /**
      * Imprime en PreOrden los elementos del árbol, separados por guiones.
      *
      * @return String conteniendo el preorden separado por guiones.
      */
-    public String preOrden();
+    String preOrden();
 
     /**
      * Imprime en InOrden los elementos del árbol, separados por guiones.
      *
      * @return String conteniendo el preorden separado por guiones.
      */
-    public String inOrden();
+    String inOrden();
 
     /**
      * Imprime en PostOrden los elementos del árbol, separados por guiones.
      *
      * @return String conteniendo el preorden separado por guiones.
      */
-    public String postOrden();
+    String postOrden();
 
    
        /**
      * Elimina un elemento dada una etiqueta.
      * @param unaEtiqueta 
      */
-    public void eliminar(Comparable unaEtiqueta);
+       void eliminar(Comparable unaEtiqueta);
 
 	
 	
