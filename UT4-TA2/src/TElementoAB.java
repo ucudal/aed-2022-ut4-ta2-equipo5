@@ -80,8 +80,19 @@ public class TElementoAB<T> implements IElementoAB<T> {
 
     @Override
     public String preOrden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        StringBuilder tempStr = new StringBuilder();
+        tempStr.append(etiqueta.toString());
+        if (hijoIzq != null) {
+            tempStr.append(getHijoIzq().preOrden());
+            tempStr.append(TArbolBB.SEPARADOR_ELEMENTOS_IMPRESOS);
+        }
+        if (hijoDer != null) {
+            tempStr.append(getHijoDer().preOrden());
+            tempStr.append(TArbolBB.SEPARADOR_ELEMENTOS_IMPRESOS);
+        }
+        return tempStr.toString();
     }
+
 
     @Override
     public String inOrden() {
