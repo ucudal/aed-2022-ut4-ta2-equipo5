@@ -1,0 +1,12 @@
+5354, contador: 0
+4292, contador: 1
+4734, contador: 2
+10996, contador: 1
+2979, contador: 2
+1342, contador: 3
+2978, contador: 4
+1383, contador: 5
+10903, contador: 2
+5365, contador: 3
+6661, contador: 4
+4345, contador: 3

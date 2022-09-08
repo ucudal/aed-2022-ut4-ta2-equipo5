@@ -35,13 +35,16 @@ public class TArbolBB<T> implements IArbolBB<T> {
 
     @Override
     public String preOrden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+        if (esVacio()){
+            return "Arbol vacio";
+        }else{
+            return this.raiz.preOrden();
+        }    }
 
     @Override
     public String inOrden() {
         if (esVacio()){
-            return null;
+            return "Arbol vacio";
         }else{
             return this.raiz.inOrden();
         }
