@@ -1,0 +1,6 @@
+4292, contador: -3
+979, contador: 3
+297, contador: 3
+130, contador: 3
+10903, contador: -3
+5354, contador: -3
