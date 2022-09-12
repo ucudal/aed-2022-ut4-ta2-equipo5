@@ -88,4 +88,5 @@ public interface IElementoAB<T> {
      */
      TElementoAB eliminar(Comparable unaEtiqueta);
 
+    TElementoAB quitaElNodo();
 }
